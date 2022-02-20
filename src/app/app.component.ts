@@ -8,14 +8,11 @@ import { NewNote, Note } from './note'
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    selected: any = {}
+    selected: NewNote = { title: '', body: '', color: '', favorite: false }
     note: Note
     list: any = []
 
     constructor(private readonly notesService: NotesService) {}
-    ngOninit() {
-        this.newNote()
-    }
 
     selectNote(note: Note) {
         // TODO: prevent changing original object
